@@ -168,7 +168,7 @@ crossorigin="anonymous"></script>
   $.getJSON("piercecounty.geojson",function(data){
        var pierceData = L.geoJson(data, {
        onEachFeature: function(feature, pierceData) {
-           pierceData.Popup('<h4>Address:'+feature.properties.NAME+'</h4>');
+           pierceData.bindPopup('<h4>Address:'+feature.properties.NAME+'</h4>');
        }
        });
       function polyStyle(feature) {
@@ -183,7 +183,7 @@ crossorigin="anonymous"></script>
 
             var popupContent = "<p><b> County Name: </b>"+feature.properties.NAME+'</p>';
 
-            layer.Popup(popupContent);
+            layer.bindPopup(popupContent);
 
         }
      
